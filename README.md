@@ -55,6 +55,12 @@ Edit `data/glossary.ts`. Keep definitions short, precise, and beginner-friendly.
 
 Edit `data/resources.ts`. Prefer official documentation, primary research papers, canonical repositories, and well-maintained benchmark or dataset pages.
 
+## Portal sections
+
+- `app/implementation` contains the build and maintenance playbook.
+- `app/evaluation` contains evaluation metrics and release guidance.
+- `data/portal.ts` powers the homepage portal finder, audience pathways, stack map, implementation roadmap, risk controls, and FAQ.
+
 ## Editorial policy
 
 The site prefers official and verifiable sources, avoids hype, and uses explicit comparison criteria. It is educational material, not a replacement for official documentation, legal advice, security review, or procurement due diligence.

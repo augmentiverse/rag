@@ -6,7 +6,7 @@ import { useCases } from "@/data/useCases";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://rag-reference-hub.local";
-  const routes = ["", "/learn", "/tools", "/dify", "/architectures", "/tutorials", "/use-cases", "/comparisons", "/glossary", "/resources", "/editorial-principles"];
+  const routes = ["", "/learn", "/tools", "/dify", "/architectures", "/tutorials", "/use-cases", "/comparisons", "/glossary", "/resources", "/implementation", "/evaluation", "/editorial-principles"];
   return [
     ...routes.map((route) => ({ url: `${base}${route}`, lastModified: new Date() })),
     ...tools.map((tool) => ({ url: `${base}/tools/${tool.slug}`, lastModified: new Date(tool.lastVerified) })),

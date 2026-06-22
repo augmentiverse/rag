@@ -11,4 +11,12 @@ export const resources: Resource[] = [
   { title: "Ragas", type: "GitHub", description: "Open-source RAG evaluation framework repository.", url: "https://github.com/explodinggradients/ragas" },
   { title: "OpenAI Cookbook: Retrieval examples", type: "GitHub", description: "Examples for building retrieval workflows with OpenAI APIs. Verify current API details in official docs.", url: "https://github.com/openai/openai-cookbook" },
   { title: "Hugging Face Community", type: "community", description: "Community hub for models, datasets, spaces, and retrieval-related discussions.", url: "https://huggingface.co/" },
+  { title: "Qdrant Documentation", type: "official docs", description: "Official vector database documentation for collections, filtering, search, and deployment.", url: "https://qdrant.tech/documentation/" },
+  { title: "Weaviate Documentation", type: "official docs", description: "Official documentation for vector and hybrid search with Weaviate.", url: "https://weaviate.io/developers/weaviate" },
+  { title: "Milvus Documentation", type: "official docs", description: "Official documentation for Milvus vector database concepts, operations, and search.", url: "https://milvus.io/docs" },
+  { title: "Langfuse Documentation", type: "official docs", description: "Official documentation for LLM tracing, evaluation, prompt management, and observability.", url: "https://langfuse.com/docs" },
+  { title: "Phoenix Documentation", type: "official docs", description: "Official Phoenix documentation for observability, tracing, and LLM evaluation workflows.", url: "https://docs.arize.com/phoenix" },
+  { title: "RAGAS Documentation", type: "official docs", description: "Official documentation for RAG evaluation metrics and workflows.", url: "https://docs.ragas.io/" },
+  { title: "Unstructured Documentation", type: "official docs", description: "Official documentation for document parsing and preprocessing before RAG indexing.", url: "https://docs.unstructured.io/" },
+  { title: "Pinecone Documentation", type: "official docs", description: "Official documentation for managed vector search and RAG-oriented retrieval patterns.", url: "https://docs.pinecone.io/" },
 ];

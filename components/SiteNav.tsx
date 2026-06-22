@@ -15,6 +15,8 @@ const nav = [
   ["Comparisons", "/comparisons"],
   ["Glossary", "/glossary"],
   ["Resources", "/resources"],
+  ["Implementation", "/implementation"],
+  ["Evaluation", "/evaluation"],
 ];
 
 export function SiteNav() {
