@@ -1,0 +1,26 @@
+import type { GlossaryTerm } from "./types";
+
+export const glossary: GlossaryTerm[] = [
+  { term: "Agentic RAG", definition: "A RAG pattern where an agent plans retrieval steps, calls tools, reflects on results, or performs multi-step reasoning before answering.", related: ["agent workflow", "query rewriting"] },
+  { term: "Answer faithfulness", definition: "The degree to which an answer is supported by the retrieved context rather than unsupported model inference.", related: ["grounding", "citation"] },
+  { term: "Chunking", definition: "The process of splitting documents into retrievable units, usually with attention to size, overlap, structure, and metadata.", related: ["embedding", "retrieval"] },
+  { term: "Citation", definition: "A reference that links generated claims back to source passages, documents, or records used in retrieval.", related: ["traceability", "grounding"] },
+  { term: "Context window", definition: "The maximum amount of text or tokens a model can consider at once during generation.", related: ["long-context models", "prompt assembly"] },
+  { term: "Embedding", definition: "A numerical representation of text, images, or other data used to compare semantic similarity.", related: ["vector database", "semantic search"] },
+  { term: "Evaluation", definition: "The practice of measuring retrieval quality, answer quality, faithfulness, latency, cost, and user outcomes.", related: ["recall", "precision"] },
+  { term: "Graph RAG", definition: "A RAG approach that uses graph structures, entities, and relationships to improve retrieval and reasoning across connected knowledge.", related: ["knowledge graph", "metadata"] },
+  { term: "Grounding", definition: "Connecting model output to external evidence so answers are constrained by sources rather than only model memory.", related: ["hallucination", "citation"] },
+  { term: "Hallucination", definition: "A generated statement that is false, unsupported, or not justified by the available context.", related: ["faithfulness", "evaluation"] },
+  { term: "Hybrid search", definition: "Retrieval that combines keyword matching with vector similarity, often improving recall and precision for mixed queries.", related: ["semantic search", "metadata filtering"] },
+  { term: "Knowledge base", definition: "A curated collection of documents, records, or facts prepared for retrieval by an AI system.", related: ["ingestion", "metadata"] },
+  { term: "Metadata filtering", definition: "Restricting retrieval using attributes such as date, author, department, language, jurisdiction, or document type.", related: ["retrieval", "hybrid search"] },
+  { term: "Multimodal RAG", definition: "RAG over multiple data types such as text, images, audio, video, tables, or scanned documents.", related: ["document parsing", "embeddings"] },
+  { term: "Precision", definition: "The share of retrieved items that are relevant to the query.", related: ["recall", "evaluation"] },
+  { term: "Prompt injection", definition: "An attack or failure mode where retrieved or user-supplied text attempts to override system instructions or safety boundaries.", related: ["security", "retrieval"] },
+  { term: "RAG", definition: "Retrieval-Augmented Generation: connecting language models with external knowledge sources to improve grounding, accuracy, traceability, and domain relevance.", related: ["retrieval", "grounding"] },
+  { term: "Recall", definition: "The share of relevant items that the retrieval system successfully finds.", related: ["precision", "evaluation"] },
+  { term: "Reranking", definition: "A second-stage retrieval step that reorders initially retrieved candidates using a more precise relevance model.", related: ["retrieval", "hybrid search"] },
+  { term: "Retrieval", definition: "Finding relevant passages, documents, or data records for a user query before generation.", related: ["vector database", "semantic search"] },
+  { term: "Semantic search", definition: "Search based on meaning similarity rather than exact keyword overlap.", related: ["embedding", "vector database"] },
+  { term: "Vector database", definition: "A database designed to store embeddings and retrieve nearby vectors efficiently.", related: ["embedding", "semantic search"] },
+];

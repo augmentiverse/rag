@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f7f8f6;
+  color: #121417;
+}
+
+.dark body {
+  background: #101413;
+  color: #eef2ec;
+}
+
+a {
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+::selection {
+  background: #d5eadc;
+  color: #102018;
+}
+
+.prose-rag h2 {
+  margin-top: 2.5rem;
+  font-size: 1.65rem;
+  line-height: 1.2;
+  font-weight: 750;
+}
+
+.prose-rag h3 {
+  margin-top: 1.75rem;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.prose-rag p,
+.prose-rag li {
+  color: #374151;
+  line-height: 1.75;
+}
+
+.dark .prose-rag p,
+.dark .prose-rag li {
+  color: #cbd5cf;
+}
