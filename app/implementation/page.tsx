@@ -37,6 +37,21 @@ export default function ImplementationPage() {
               </div>
             </section>
 
+            <section className="rounded-lg border border-line bg-white p-6 dark:border-slate-800 dark:bg-slate-950">
+              <h2 className="text-2xl font-black">Example project plan</h2>
+              <p className="mt-3 leading-8 text-slate-700 dark:text-slate-300">
+                For a first production-minded pilot, choose one department, one user group, and one source collection. Build a small assistant that answers only from approved documents and logs every failed or uncertain answer.
+              </p>
+              <ol className="mt-5 grid gap-3 md:grid-cols-2">
+                {[
+                  "Week 1: define use case, source owners, success metrics, and unacceptable failures.",
+                  "Week 2: prepare documents, metadata, parsing, and a first retrieval index.",
+                  "Week 3: test retrieval, tune chunking, add citations, and create the first evaluation set.",
+                  "Week 4: pilot with users, review traces, fix failures, and decide whether to scale.",
+                ].map((item) => <li className="rounded-md border border-line bg-paper p-4 text-sm leading-6 dark:border-slate-800 dark:bg-slate-900" key={item}>{item}</li>)}
+              </ol>
+            </section>
+
             <section>
               <SectionHeader title="Reference stack" description="Use this stack map to decide what must be owned, configured, evaluated, or purchased." />
               <div className="mt-6">

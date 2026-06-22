@@ -3,6 +3,7 @@ import { ArchitectureDiagram } from "@/components/ArchitectureDiagram";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Callout } from "@/components/Callout";
 import { SectionHeader } from "@/components/SectionHeader";
+import { difyDetailedWorkflow } from "@/data/reference";
 
 export const metadata: Metadata = {
   title: "Dify Guide",
@@ -32,8 +33,24 @@ export default function DifyPage() {
             <ol>
               {difySteps.map((step) => <li key={step}>{step}.</li>)}
             </ol>
+            <h2>Detailed implementation workflow</h2>
+            <div className="grid gap-4">
+              {difyDetailedWorkflow.map((step, index) => (
+                <article className="rounded-lg border border-line bg-paper p-5 dark:border-slate-800 dark:bg-slate-900" key={step.title}>
+                  <p className="text-sm font-black uppercase tracking-[0.16em] text-clay">Phase {index + 1}</p>
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
+                </article>
+              ))}
+            </div>
             <h2>Conceptual architecture</h2>
             <ArchitectureDiagram steps={["User", "Dify app", "Knowledge base", "Retriever", "Model provider", "Answer with sources", "Logs and evaluation"]} />
+            <h2>Example Dify project briefs</h2>
+            <ul>
+              <li><strong>University helpdesk:</strong> index student handbook, scholarship rules, library policies, and academic calendar pages.</li>
+              <li><strong>Institutional knowledge base:</strong> connect official procedures, forms, and internal guidelines with access control review.</li>
+              <li><strong>Customer support assistant:</strong> retrieve approved support articles and escalate low-confidence answers to human agents.</li>
+            </ul>
             <h2>Use cases</h2>
             <p>Institutional knowledge assistants, document Q&A, customer support, education, research assistants, legal or documentary search, and public administration knowledge bases are all common candidate areas.</p>
             <h2>Strengths and limitations</h2>
@@ -48,6 +65,15 @@ export default function DifyPage() {
               <a className="mt-3 block text-spruce dark:text-emerald-200" href="https://dify.ai/" target="_blank" rel="noreferrer">dify.ai</a>
               <a className="block text-spruce dark:text-emerald-200" href="https://docs.dify.ai/" target="_blank" rel="noreferrer">docs.dify.ai</a>
               <a className="block text-spruce dark:text-emerald-200" href="https://github.com/langgenius/dify" target="_blank" rel="noreferrer">GitHub repository</a>
+            </div>
+            <div className="rounded-lg border border-line bg-white p-5 text-sm leading-7 dark:border-slate-800 dark:bg-slate-950">
+              <p className="font-bold">Before choosing Dify</p>
+              <ul className="mt-3 grid gap-2 text-slate-700 dark:text-slate-300">
+                <li>Verify current hosting, licensing, and feature limits from official sources.</li>
+                <li>Test retrieval quality with your real documents.</li>
+                <li>Confirm who owns source updates, logs, and evaluation review.</li>
+                <li>Compare against code-first frameworks if custom retrieval is central.</li>
+              </ul>
             </div>
           </aside>
         </div>

@@ -53,6 +53,23 @@ export default function EvaluationPage() {
                 ))}
               </ol>
             </section>
+
+            <section className="rounded-lg border border-line bg-white p-6 dark:border-slate-800 dark:bg-slate-950">
+              <h2 className="text-2xl font-black">Example evaluation set</h2>
+              <p className="mt-3 leading-8 text-slate-700 dark:text-slate-300">
+                A useful evaluation set should include normal questions, hard questions, exact-reference questions, ambiguous questions, and questions the system should not answer.
+              </p>
+              <div className="mt-5 grid gap-3 md:grid-cols-2">
+                {[
+                  "Known-answer question: the source contains one direct answer.",
+                  "Multi-source question: the answer requires comparing two approved sources.",
+                  "Exact-reference question: the query contains a regulation number, policy code, or product identifier.",
+                  "Ambiguous question: the system should ask for clarification.",
+                  "Out-of-scope question: the system should refuse or redirect.",
+                  "Stale-source question: the system must prefer the current document over older copies.",
+                ].map((item) => <div className="rounded-md border border-line bg-paper p-4 text-sm leading-6 dark:border-slate-800 dark:bg-slate-900" key={item}>{item}</div>)}
+              </div>
+            </section>
           </div>
 
           <aside className="space-y-4">

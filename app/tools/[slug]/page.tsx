@@ -47,6 +47,17 @@ export default async function ToolDetailPage({ params }: { params: Promise<{ slu
             </dl>
             <TwoColumn title="Strengths" items={tool.strengths} />
             <TwoColumn title="Limitations" items={tool.limitations} />
+            <section className="mt-8">
+              <h2 className="text-2xl font-bold">How to evaluate this tool</h2>
+              <ol className="mt-4 grid gap-3 md:grid-cols-2">
+                {[
+                  `Test ${tool.name} with a small representative corpus.`,
+                  "Verify official documentation, pricing, licensing, and deployment options.",
+                  "Measure retrieval quality, latency, and operational complexity.",
+                  "Check whether the team can maintain ingestion, updates, logs, and evaluation.",
+                ].map((item) => <li className="rounded-md border border-line bg-paper p-4 text-sm leading-6 dark:border-slate-800 dark:bg-slate-900" key={item}>{item}</li>)}
+              </ol>
+            </section>
           </article>
           <aside className="space-y-4">
             <div className="rounded-lg border border-line bg-white p-5 dark:border-slate-800 dark:bg-slate-950">

@@ -4,6 +4,7 @@ import { ArchitectureDiagram } from "@/components/ArchitectureDiagram";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SectionHeader } from "@/components/SectionHeader";
 import { architectures } from "@/data/architectures";
+import { architectureExamples, officialSourceLinks } from "@/data/reference";
 
 export const metadata: Metadata = {
   title: "RAG Architectures",
@@ -27,7 +28,29 @@ export default function ArchitecturesPage() {
                 <Info title="Advantages" items={item.advantages} />
                 <Info title="Limitations" items={item.limitations} />
               </div>
+              {architectureExamples[item.slug] ? (
+                <div className="mt-6 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+                  <div className="rounded-md border border-line bg-paper p-4 dark:border-slate-800 dark:bg-slate-900">
+                    <h3 className="font-bold">Concrete example</h3>
+                    <p className="mt-2 text-sm leading-7 text-slate-700 dark:text-slate-300">{architectureExamples[item.slug].example}</p>
+                  </div>
+                  <div className="rounded-md border border-line bg-paper p-4 dark:border-slate-800 dark:bg-slate-900">
+                    <h3 className="font-bold">Step-by-step build path</h3>
+                    <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                      {architectureExamples[item.slug].buildSteps.map((step) => <li key={step}>{step}</li>)}
+                    </ol>
+                  </div>
+                </div>
+              ) : null}
               <p className="mt-5 text-sm font-semibold text-spruce dark:text-emerald-200">{item.whenToUse}</p>
+              {architectureExamples[item.slug] ? (
+                <div className="mt-4 flex flex-wrap gap-3 text-sm">
+                  {architectureExamples[item.slug].sourceLinks.map((title) => {
+                    const source = officialSourceLinks.find((item) => item.title === title || item.title.includes(title.replace(" documentation", "")));
+                    return source ? <a key={title} href={source.href} target="_blank" rel="noreferrer" className="font-bold text-spruce dark:text-emerald-200">{title}</a> : null;
+                  })}
+                </div>
+              ) : null}
               <Link className="mt-4 inline-block text-sm font-bold text-spruce dark:text-emerald-200" href={`/architectures#${item.slug}`}>Link to this pattern</Link>
             </article>
           ))}
