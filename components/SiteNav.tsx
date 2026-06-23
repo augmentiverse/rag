@@ -31,7 +31,7 @@ export function SiteNav() {
   const moreActive = secondaryNav.some(([, href]) => pathname === href);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-paper/88 backdrop-blur-xl dark:border-indigo-400/15 dark:bg-blue-950/88">
+    <header className="sticky top-0 z-40 border-b border-indigo-400/15 bg-blue-950/90 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-[1320px] items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8" aria-label="Primary navigation">
         <Link href="/" className="flex shrink-0 items-center gap-3 font-bold">
           <span className="grid h-9 w-9 place-items-center rounded-md bg-gradient-to-br from-indigo-500 to-sky-500 font-mono text-xs text-white shadow-[0_10px_30px_rgba(59,130,246,0.28)]">RAG</span>
@@ -42,7 +42,7 @@ export function SiteNav() {
             <Link
               key={href}
               href={href}
-              className={`whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold transition ${pathname === href ? "bg-white text-spruce shadow-sm dark:bg-indigo-500/15 dark:text-white" : "text-slate-700 hover:bg-white hover:text-spruce dark:text-blue-100/80 dark:hover:bg-blue-900/70 dark:hover:text-white"}`}
+              className={`whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold transition ${pathname === href ? "bg-indigo-500/15 text-white shadow-sm" : "text-blue-100/75 hover:bg-blue-900/70 hover:text-white"}`}
             >
               {label}
             </Link>
@@ -51,14 +51,14 @@ export function SiteNav() {
             <button
               type="button"
               onClick={() => setMoreOpen((value) => !value)}
-              className={`inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold transition ${moreActive ? "bg-white text-spruce shadow-sm dark:bg-indigo-500/15 dark:text-white" : "text-slate-700 hover:bg-white hover:text-spruce dark:text-blue-100/80 dark:hover:bg-blue-900/70 dark:hover:text-white"}`}
+              className={`inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold transition ${moreActive ? "bg-indigo-500/15 text-white shadow-sm" : "text-blue-100/75 hover:bg-blue-900/70 hover:text-white"}`}
               aria-expanded={moreOpen}
               aria-haspopup="menu"
             >
               More <ChevronDown className="h-4 w-4" />
             </button>
             {moreOpen ? (
-              <div className="absolute right-0 mt-2 w-56 rounded-lg border border-line bg-white p-2 shadow-soft dark:border-indigo-400/20 dark:bg-blue-950" role="menu">
+              <div className="absolute right-0 mt-2 w-56 rounded-lg border border-indigo-400/20 bg-blue-950 p-2 shadow-soft" role="menu">
                 {secondaryNav.map(([label, href]) => (
                   <Link
                     key={href}

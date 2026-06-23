@@ -45,41 +45,51 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-line bg-blue-950 dark:border-indigo-400/15">
+      <section className="relative overflow-hidden border-b border-indigo-400/15 bg-blue-950">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.34),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(129,140,248,0.24),transparent_30%),linear-gradient(135deg,#0b1730,#0f2550_58%,#1e1b4b)]" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-24">
-          <div>
+        <div className="relative mx-auto max-w-[1320px] px-4 py-20 text-center sm:px-6 lg:px-8 lg:py-28">
+          <div className="mx-auto max-w-4xl">
             <Badge tone="green">Educational reference hub</Badge>
-            <h1 className="mt-6 max-w-4xl font-display text-5xl font-black tracking-normal text-white md:text-7xl">The practical portal for Retrieval-Augmented Generation</h1>
-            <p className="mt-6 max-w-2xl text-xl leading-9 text-emerald-50/90">
+            <h1 className="mx-auto mt-6 max-w-4xl font-display text-5xl font-black tracking-normal text-white md:text-7xl">
+              The practical portal for <span className="bg-gradient-to-r from-sky-300 via-indigo-300 to-violet-300 bg-clip-text text-transparent">Retrieval-Augmented Generation</span>
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-xl leading-9 text-blue-100/85">
               Learn what RAG is, compare tools, design architectures, evaluate quality, and build grounded AI systems that users can trust.
             </p>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-emerald-50/80">
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-blue-100/70">
               RAG connects language models with external knowledge sources to improve grounding, accuracy, traceability, and domain relevance.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/learn" className="inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-bold text-spruce hover:bg-emerald-50">
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <Link href="/learn" className="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-indigo-500 to-violet-500 px-5 py-3 text-sm font-bold text-white shadow-[0_12px_34px_rgba(99,102,241,0.35)] hover:-translate-y-0.5">
                 Start learning <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link href="/implementation" className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 px-5 py-3 text-sm font-bold text-white backdrop-blur hover:bg-white/15">
+              <Link href="/implementation" className="inline-flex items-center gap-2 rounded-md border border-indigo-300/25 bg-blue-950/45 px-5 py-3 text-sm font-bold text-blue-50 backdrop-blur hover:-translate-y-0.5 hover:bg-blue-900/60">
                 Build efficiently
               </Link>
+              <Link href="/tools" className="inline-flex items-center gap-2 rounded-md border border-indigo-300/25 bg-blue-950/45 px-5 py-3 text-sm font-bold text-blue-50 backdrop-blur hover:-translate-y-0.5 hover:bg-blue-900/60">
+                Compare tools
+              </Link>
             </div>
-            <div className="mt-10">
+            <div className="mx-auto mt-14 max-w-5xl">
               <PortalStats stats={stats} />
             </div>
           </div>
-          <div className="rounded-xl border border-white/20 bg-white/10 p-5 text-white shadow-soft backdrop-blur">
-            <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.18em] text-sky-100">RAG pipeline</p>
+        </div>
+      </section>
+
+      <section className="border-y border-indigo-400/15 bg-blue-950/95 py-16">
+        <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
+          <SectionHeader eyebrow="// pipeline overview" title="Ten stages, one grounded answer" description="Every verifiable answer travels through these stages, from raw knowledge to cited, evaluatable output." />
+          <div className="mt-8">
             <RagPipeline />
-            <div className="mt-5 grid gap-3 md:grid-cols-2">
-              {["Ground answers in sources", "Refresh knowledge without retraining", "Expose citations and evidence", "Measure quality over time"].map((item) => (
-                <div key={item} className="flex items-start gap-3 rounded-md border border-white/15 bg-white/10 p-3">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-200" />
-                  <span className="text-sm font-semibold text-emerald-50">{item}</span>
-                </div>
-              ))}
-            </div>
+          </div>
+          <div className="mt-5 grid gap-3 md:grid-cols-4">
+            {["Ground answers in sources", "Refresh knowledge without retraining", "Expose citations and evidence", "Measure quality over time"].map((item) => (
+              <div key={item} className="flex items-start gap-3 rounded-md border border-indigo-300/15 bg-blue-900/35 p-3">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 text-sky-300" />
+                <span className="text-sm font-semibold text-blue-50">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
