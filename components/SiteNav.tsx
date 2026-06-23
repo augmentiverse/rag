@@ -9,6 +9,7 @@ const primaryNav = [
   ["Learn", "/learn"],
   ["Tools", "/tools"],
   ["Architectures", "/architectures"],
+  ["Implementation", "/implementation"],
   ["Resources", "/resources"],
 ];
 
@@ -17,7 +18,6 @@ const secondaryNav = [
   ["Tutorials", "/tutorials"],
   ["Use Cases", "/use-cases"],
   ["Comparisons", "/comparisons"],
-  ["Implementation", "/implementation"],
   ["Evaluation", "/evaluation"],
   ["Glossary", "/glossary"],
 ];
