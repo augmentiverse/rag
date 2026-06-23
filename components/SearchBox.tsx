@@ -11,7 +11,7 @@ export function SearchBox({ value, onChange, placeholder }: { value: string; onC
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
-        className="h-11 w-full rounded-md border border-line bg-white pl-10 pr-3 text-sm outline-none transition focus:border-spruce focus:ring-2 focus:ring-emerald-100 dark:border-slate-700 dark:bg-slate-950 dark:focus:ring-emerald-900"
+        className="h-11 w-full rounded-md border border-line bg-white pl-10 pr-3 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-indigo-400/25 dark:bg-blue-950 dark:focus:border-sky-400 dark:focus:ring-sky-900/50"
       />
     </label>
   );

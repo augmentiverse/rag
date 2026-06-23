@@ -6,17 +6,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#121417",
-        muted: "#5d6673",
-        paper: "#f7f8f6",
-        line: "#d9ded8",
-        spruce: "#0f3d3e",
-        moss: "#657a3f",
-        clay: "#a65335",
-        sky: "#2d6f9f"
+        ink: "#111827",
+        muted: "#64748b",
+        paper: "#f8fafc",
+        line: "#d8e1ee",
+        spruce: "#1d4ed8",
+        moss: "#2563eb",
+        clay: "#b45309",
+        sky: "#2563eb"
       },
       boxShadow: {
-        soft: "0 18px 48px rgba(18, 20, 23, 0.10)"
+        soft: "0 18px 48px rgba(15, 23, 42, 0.10)"
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui", "Segoe UI", "sans-serif"],
+        display: ["Space Grotesk", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "Consolas", "monospace"]
       }
     },
   },
