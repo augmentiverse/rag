@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, Boxes, CheckCircle2, FileQuestion, GraduationCap, Landmark, Library, Network, SearchCheck, ShieldCheck, Sparkles, Target, Workflow } from "lucide-react";
-import { ArchitectureDiagram } from "@/components/ArchitectureDiagram";
 import { Badge } from "@/components/Badge";
 import { PersonaPathways } from "@/components/PersonaPathways";
 import { PortalSearch } from "@/components/PortalSearch";
 import { PortalStats } from "@/components/PortalStats";
+import { RagPipeline } from "@/components/RagPipeline";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StackMap } from "@/components/StackMap";
 import { architectures } from "@/data/architectures";
@@ -25,8 +25,6 @@ const navCards = [
   ["Implementation", "/implementation", Workflow],
   ["Evaluation", "/evaluation", Target],
 ];
-
-const pipeline = ["documents", "ingestion", "chunking", "embeddings", "vector database", "retrieval", "reranking", "prompt/context assembly", "LLM generation", "citations/evaluation"];
 
 const audiences = [
   ["Developers", "Build reliable retrieval systems and choose maintainable toolchains."],
@@ -72,8 +70,8 @@ export default function HomePage() {
             </div>
           </div>
           <div className="rounded-xl border border-white/20 bg-white/10 p-5 text-white shadow-soft backdrop-blur">
-            <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-emerald-100">RAG pipeline</p>
-            <ArchitectureDiagram steps={pipeline} />
+            <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.18em] text-sky-100">RAG pipeline</p>
+            <RagPipeline />
             <div className="mt-5 grid gap-3 md:grid-cols-2">
               {["Ground answers in sources", "Refresh knowledge without retraining", "Expose citations and evidence", "Measure quality over time"].map((item) => (
                 <div key={item} className="flex items-start gap-3 rounded-md border border-white/15 bg-white/10 p-3">

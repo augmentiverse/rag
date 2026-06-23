@@ -9,11 +9,11 @@ const primaryNav = [
   ["Learn", "/learn"],
   ["Tools", "/tools"],
   ["Dify", "/dify"],
-  ["Architectures", "/architectures"],
-  ["Tutorials", "/tutorials"],
 ];
 
 const secondaryNav = [
+  ["Architectures", "/architectures"],
+  ["Tutorials", "/tutorials"],
   ["Use Cases", "/use-cases"],
   ["Comparisons", "/comparisons"],
   ["Implementation", "/implementation"],
