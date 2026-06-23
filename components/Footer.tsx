@@ -28,7 +28,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-line pt-5 text-sm text-slate-500 dark:border-indigo-400/15 dark:text-slate-300">
-          Copyright {new Date().getFullYear()} ELM. N. All rights reserved.
+          Copyright {new Date().getFullYear()} NE. All rights reserved.
         </div>
       </div>
     </footer>
