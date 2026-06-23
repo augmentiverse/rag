@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { GuideGrid } from "@/components/GuideGrid";
 import { ResourceCard } from "@/components/ResourceCard";
 import { SectionHeader } from "@/components/SectionHeader";
+import { sectionGuides } from "@/data/deepReference";
 import { officialSourceLinks } from "@/data/reference";
 import { resources } from "@/data/resources";
 
@@ -16,6 +18,9 @@ export default function ResourcesPage() {
       <Breadcrumbs items={[{ label: "Resources" }]} />
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <SectionHeader eyebrow="Resources" title="Official docs, papers, datasets, benchmarks, courses, and communities" description="This resource list is structured so it can grow into a curated library. Prefer official documentation and primary sources when making implementation decisions." />
+        <div className="mt-8">
+          <GuideGrid guides={sectionGuides.resources} />
+        </div>
         <div className="mt-8 rounded-lg border border-line bg-white p-6 dark:border-slate-800 dark:bg-slate-950">
           <h2 className="text-2xl font-black">Essential trusted sources</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">

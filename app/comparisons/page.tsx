@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { GuideGrid } from "@/components/GuideGrid";
 import { SectionHeader } from "@/components/SectionHeader";
 import { comparisons } from "@/data/comparisons";
+import { sectionGuides } from "@/data/deepReference";
 import { comparisonHowTo } from "@/data/reference";
 
 export const metadata: Metadata = {
@@ -16,6 +18,9 @@ export default function ComparisonsPage() {
       <Breadcrumbs items={[{ label: "Comparisons" }]} />
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <SectionHeader eyebrow="Comparisons" title="Transparent tool comparisons" description="Comparisons use explicit criteria and careful wording. Verify final procurement details with official documentation." />
+        <div className="mt-8">
+          <GuideGrid guides={sectionGuides.comparisons} />
+        </div>
         <div className="mt-8 rounded-lg border border-line bg-white p-6 dark:border-slate-800 dark:bg-slate-950">
           <h2 className="text-2xl font-black">How to compare RAG tools responsibly</h2>
           <ol className="mt-4 grid gap-3 md:grid-cols-2">

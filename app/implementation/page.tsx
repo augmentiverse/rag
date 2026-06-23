@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Callout } from "@/components/Callout";
+import { GuideGrid } from "@/components/GuideGrid";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StackMap } from "@/components/StackMap";
+import { sectionGuides } from "@/data/deepReference";
 import { implementationRoadmap, ragFaq, riskControls, stackLayers } from "@/data/portal";
 
 export const metadata: Metadata = {
@@ -20,6 +22,9 @@ export default function ImplementationPage() {
           title="Build RAG efficiently, from idea to maintained knowledge service"
           description="A good RAG project is part information architecture, part search engineering, part product design, and part evaluation practice."
         />
+        <div className="mt-8">
+          <GuideGrid guides={sectionGuides.implementation} />
+        </div>
         <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_340px]">
           <div className="space-y-8">
             <section className="rounded-lg border border-line bg-white p-6 dark:border-slate-800 dark:bg-slate-950">

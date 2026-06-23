@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { ArchitectureDiagram } from "@/components/ArchitectureDiagram";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Callout } from "@/components/Callout";
+import { GuideGrid } from "@/components/GuideGrid";
 import { SectionHeader } from "@/components/SectionHeader";
+import { difyInstallGuide, difyUsagePlaybook } from "@/data/deepReference";
 import { difyDetailedWorkflow } from "@/data/reference";
 
 export const metadata: Metadata = {
@@ -33,6 +35,23 @@ export default function DifyPage() {
             <ol>
               {difySteps.map((step) => <li key={step}>{step}.</li>)}
             </ol>
+            <h2>How to install or access Dify</h2>
+            <div className="grid gap-4">
+              {difyInstallGuide.map((option) => (
+                <article className="rounded-xl border border-line bg-paper p-5 dark:border-slate-800 dark:bg-slate-900" key={option.title}>
+                  <h3>{option.title}</h3>
+                  <p>{option.body}</p>
+                  <ol>
+                    {option.steps.map((step) => <li key={step}>{step}</li>)}
+                  </ol>
+                  <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                    {option.links.map((link) => <a className="font-bold text-spruce dark:text-sky-200" href={link.href} target="_blank" rel="noreferrer" key={link.href}>{link.title}</a>)}
+                  </div>
+                </article>
+              ))}
+            </div>
+            <h2>How to use Dify efficiently</h2>
+            <GuideGrid guides={difyUsagePlaybook.map((item) => ({ title: item.title, items: item.steps }))} />
             <h2>Detailed implementation workflow</h2>
             <div className="grid gap-4">
               {difyDetailedWorkflow.map((step, index) => (

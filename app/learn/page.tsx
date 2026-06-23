@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Callout } from "@/components/Callout";
+import { GuideGrid } from "@/components/GuideGrid";
 import { SectionHeader } from "@/components/SectionHeader";
+import { sectionGuides } from "@/data/deepReference";
 import { learnTopics } from "@/data/learn";
 import { learnDeepDives, officialSourceLinks } from "@/data/reference";
 
@@ -16,6 +18,9 @@ export default function LearnPage() {
       <Breadcrumbs items={[{ label: "Learn RAG" }]} />
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <SectionHeader eyebrow="Learn RAG" title="Retrieval-Augmented Generation, from first principles to practice" description="Understand why RAG emerged, how it differs from fine-tuning and long-context models, and how modern RAG systems are designed." />
+        <div className="mt-8">
+          <GuideGrid guides={sectionGuides.learn} />
+        </div>
         <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_320px]">
           <div className="prose-rag rounded-lg border border-line bg-white p-6 dark:border-slate-800 dark:bg-slate-950">
             {learnTopics.map((topic) => (

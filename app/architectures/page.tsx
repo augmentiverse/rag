@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArchitectureDiagram } from "@/components/ArchitectureDiagram";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { GuideGrid } from "@/components/GuideGrid";
 import { SectionHeader } from "@/components/SectionHeader";
 import { architectures } from "@/data/architectures";
+import { sectionGuides } from "@/data/deepReference";
 import { architectureExamples, officialSourceLinks } from "@/data/reference";
 
 export const metadata: Metadata = {
@@ -17,6 +19,9 @@ export default function ArchitecturesPage() {
       <Breadcrumbs items={[{ label: "Architectures" }]} />
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <SectionHeader eyebrow="Architectures" title="Practical RAG architecture patterns" description="Use these patterns as starting points, then validate retrieval quality, security, cost, and user outcomes for your domain." />
+        <div className="mt-8">
+          <GuideGrid guides={sectionGuides.architectures} />
+        </div>
         <div className="mt-8 grid gap-6">
           {architectures.map((item) => (
             <article className="rounded-lg border border-line bg-white p-6 dark:border-slate-800 dark:bg-slate-950" id={item.slug} key={item.slug}>

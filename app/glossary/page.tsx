@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { GlossarySearch } from "@/components/GlossarySearch";
+import { GuideGrid } from "@/components/GuideGrid";
 import { SectionHeader } from "@/components/SectionHeader";
+import { sectionGuides } from "@/data/deepReference";
 import { glossary } from "@/data/glossary";
 import { learnDeepDives } from "@/data/reference";
 
@@ -16,6 +18,9 @@ export default function GlossaryPage() {
       <Breadcrumbs items={[{ label: "Glossary" }]} />
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <SectionHeader eyebrow="Glossary" title="RAG terminology, alphabetically searchable" description="Use the glossary to align teams around retrieval, evaluation, grounding, citations, and architecture language." />
+        <div className="mt-8">
+          <GuideGrid guides={sectionGuides.glossary} />
+        </div>
         <div className="mt-8 rounded-lg border border-line bg-white p-6 dark:border-slate-800 dark:bg-slate-950">
           <h2 className="text-2xl font-black">How to use the glossary</h2>
           <p className="mt-3 leading-8 text-slate-700 dark:text-slate-300">

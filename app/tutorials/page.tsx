@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { GuideGrid } from "@/components/GuideGrid";
 import { SectionHeader } from "@/components/SectionHeader";
 import { TutorialExplorer } from "@/components/TutorialExplorer";
+import { sectionGuides } from "@/data/deepReference";
 import { tutorials } from "@/data/tutorials";
 
 export const metadata: Metadata = {
@@ -19,6 +21,9 @@ export default function TutorialsPage() {
           title="Learn RAG by building, testing, and improving"
           description="Filter tutorials by level and topic. Each tutorial includes outcomes, prerequisites, step-by-step guidance, trusted official references, and next steps."
         />
+        <div className="mt-8">
+          <GuideGrid guides={sectionGuides.tutorials} />
+        </div>
         <div className="mt-8">
           <TutorialExplorer tutorials={tutorials} />
         </div>

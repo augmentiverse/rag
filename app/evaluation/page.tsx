@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Callout } from "@/components/Callout";
+import { GuideGrid } from "@/components/GuideGrid";
 import { SectionHeader } from "@/components/SectionHeader";
+import { sectionGuides } from "@/data/deepReference";
 import { evaluationMetrics } from "@/data/portal";
 
 export const metadata: Metadata = {
@@ -30,6 +32,9 @@ export default function EvaluationPage() {
           title="Measure whether your RAG system is actually useful"
           description="RAG quality is not just answer fluency. It includes retrieval quality, source support, citations, refusal behavior, cost, latency, and maintainability."
         />
+        <div className="mt-8">
+          <GuideGrid guides={sectionGuides.evaluation} />
+        </div>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_340px]">
           <div className="space-y-8">
