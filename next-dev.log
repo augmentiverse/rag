@@ -120,3 +120,8 @@
  ✓ Compiled /_error in 2.5s (1016 modules)
  GET / 500 in 7244ms
  GET / 200 in 657ms
+ ✓ Compiled in 464ms (517 modules)
+ ✓ Compiled in 217ms (409 modules)
+ ✓ Compiled in 159ms (409 modules)
+ ✓ Compiled in 197ms (409 modules)
+ ✓ Compiled in 202ms (409 modules)
