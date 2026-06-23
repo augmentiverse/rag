@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, Moon, Sun, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const primaryNav = [
   ["Learn", "/learn"],
@@ -27,22 +27,33 @@ const mobileNav = [["Home", "/"], ...primaryNav, ...secondaryNav];
 export function SiteNav() {
   const [open, setOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
   const pathname = usePathname();
   const moreActive = secondaryNav.some(([, href]) => pathname === href);
 
+  useEffect(() => {
+    const stored = window.localStorage.getItem("rag-theme");
+    if (stored === "light" || stored === "dark") setTheme(stored);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    window.localStorage.setItem("rag-theme", theme);
+  }, [theme]);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-indigo-400/15 bg-blue-950/90 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-[1320px] items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8" aria-label="Primary navigation">
+    <header className="sticky top-0 z-40 border-b border-line bg-white/92 backdrop-blur-xl dark:border-indigo-400/15 dark:bg-[#070c1b]/94">
+      <nav className="mx-auto flex max-w-[1440px] items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8" aria-label="Primary navigation">
         <Link href="/" className="flex shrink-0 items-center gap-3 font-bold">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-gradient-to-br from-indigo-500 to-sky-500 font-mono text-xs text-white shadow-[0_10px_30px_rgba(59,130,246,0.28)]">RAG</span>
-          <span className="tracking-tight">Reference Hub</span>
+          <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500 font-mono text-xs text-white shadow-[0_10px_30px_rgba(99,102,241,0.32)]">RAG</span>
+          <span className="text-lg tracking-tight text-slate-950 dark:text-white">Reference Hub</span>
         </Link>
         <div className="hidden min-w-0 flex-1 items-center gap-1 lg:flex">
           {primaryNav.map(([label, href]) => (
             <Link
               key={href}
               href={href}
-              className={`whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold transition ${pathname === href ? "bg-indigo-500/15 text-white shadow-sm" : "text-blue-100/75 hover:bg-blue-900/70 hover:text-white"}`}
+              className={`whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold transition ${pathname === href ? "bg-indigo-50 text-indigo-700 shadow-sm dark:bg-indigo-500/15 dark:text-white" : "text-slate-600 hover:bg-slate-100 hover:text-slate-950 dark:text-blue-100/75 dark:hover:bg-blue-900/70 dark:hover:text-white"}`}
             >
               {label}
             </Link>
@@ -51,14 +62,14 @@ export function SiteNav() {
             <button
               type="button"
               onClick={() => setMoreOpen((value) => !value)}
-              className={`inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold transition ${moreActive ? "bg-indigo-500/15 text-white shadow-sm" : "text-blue-100/75 hover:bg-blue-900/70 hover:text-white"}`}
+              className={`inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold transition ${moreActive ? "bg-indigo-50 text-indigo-700 shadow-sm dark:bg-indigo-500/15 dark:text-white" : "text-slate-600 hover:bg-slate-100 hover:text-slate-950 dark:text-blue-100/75 dark:hover:bg-blue-900/70 dark:hover:text-white"}`}
               aria-expanded={moreOpen}
               aria-haspopup="menu"
             >
               More <ChevronDown className="h-4 w-4" />
             </button>
             {moreOpen ? (
-              <div className="absolute right-0 mt-2 w-56 rounded-lg border border-indigo-400/20 bg-blue-950 p-2 shadow-soft" role="menu">
+              <div className="absolute right-0 mt-2 w-56 rounded-lg border border-line bg-white p-2 shadow-soft dark:border-indigo-400/20 dark:bg-blue-950" role="menu">
                 {secondaryNav.map(([label, href]) => (
                   <Link
                     key={href}
@@ -74,6 +85,18 @@ export function SiteNav() {
           </div>
         </div>
         <div className="flex shrink-0 items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setTheme((value) => (value === "dark" ? "light" : "dark"))}
+            className="grid h-10 w-10 place-items-center rounded-md border border-line bg-white text-slate-700 hover:bg-slate-50 dark:border-indigo-400/20 dark:bg-blue-950 dark:text-blue-100 dark:hover:bg-blue-900"
+            aria-label={theme === "dark" ? "Switch to light interface" : "Switch to dark interface"}
+            title={theme === "dark" ? "Light interface" : "Dark interface"}
+          >
+            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
+          <Link href="/learn" className="hidden rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 px-5 py-2.5 text-sm font-bold text-white shadow-[0_10px_28px_rgba(99,102,241,0.28)] hover:-translate-y-0.5 md:inline-flex">
+            Start learning <span aria-hidden="true">-&gt;</span>
+          </Link>
           <button type="button" onClick={() => setOpen((value) => !value)} className="grid h-10 w-10 place-items-center rounded-md border border-line bg-white lg:hidden dark:border-slate-700 dark:bg-slate-900" aria-label="Open navigation">
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>

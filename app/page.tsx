@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, Boxes, CheckCircle2, FileQuestion, GraduationCap, Landmark, Library, Network, SearchCheck, ShieldCheck, Sparkles, Target, Workflow } from "lucide-react";
-import { Badge } from "@/components/Badge";
 import { PersonaPathways } from "@/components/PersonaPathways";
 import { PortalSearch } from "@/components/PortalSearch";
 import { PortalStats } from "@/components/PortalStats";
@@ -45,29 +44,42 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-indigo-400/15 bg-blue-950">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.34),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(129,140,248,0.24),transparent_30%),linear-gradient(135deg,#0b1730,#0f2550_58%,#1e1b4b)]" />
-        <div className="relative mx-auto max-w-[1320px] px-4 py-20 text-center sm:px-6 lg:px-8 lg:py-28">
-          <div className="mx-auto max-w-4xl">
-            <Badge tone="green">Educational reference hub</Badge>
-            <h1 className="mx-auto mt-6 max-w-4xl font-display text-5xl font-black tracking-normal text-white md:text-7xl">
-              The practical portal for <span className="bg-gradient-to-r from-sky-300 via-indigo-300 to-violet-300 bg-clip-text text-transparent">Retrieval-Augmented Generation</span>
+      <section className="relative overflow-hidden border-b border-line bg-slate-50 dark:border-indigo-400/15 dark:bg-[#070c1b]">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(37,99,235,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.055)_1px,transparent_1px)] bg-[size:44px_44px] dark:bg-[linear-gradient(rgba(96,165,250,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(96,165,250,0.06)_1px,transparent_1px)]" />
+        <div className="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-indigo-100/65 to-transparent dark:from-indigo-500/8" />
+        <div className="relative mx-auto max-w-[1440px] px-4 py-20 text-center sm:px-6 lg:px-8 lg:py-28">
+          <div className="mx-auto max-w-6xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-300/70 bg-white/80 px-5 py-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-indigo-700 shadow-sm dark:border-indigo-400/25 dark:bg-indigo-500/10 dark:text-indigo-300">
+              <span aria-hidden="true" className="text-indigo-500">&gt;</span>
+              Educational Reference Hub
+            </div>
+            <h1 className="mx-auto mt-10 max-w-7xl overflow-visible font-display text-[clamp(3rem,7vw,6.6rem)] font-black leading-[1.03] tracking-normal">
+              <span className="block text-slate-950 dark:text-white">The practical portal for</span>
+              <span className="block bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-400 bg-clip-text pb-3 text-transparent">
+                Retrieval-Augmented Generation
+              </span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-xl leading-9 text-blue-100/85">
+            <p className="mx-auto mt-7 max-w-3xl text-xl leading-9 text-slate-600 dark:text-blue-100/78">
               Learn what RAG is, compare tools, design architectures, evaluate quality, and build grounded AI systems that users can trust.
             </p>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-blue-100/70">
+            <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-600 dark:text-blue-100/64">
               RAG connects language models with external knowledge sources to improve grounding, accuracy, traceability, and domain relevance.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link href="/learn" className="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-indigo-500 to-violet-500 px-5 py-3 text-sm font-bold text-white shadow-[0_12px_34px_rgba(99,102,241,0.35)] hover:-translate-y-0.5">
-                Start learning <ArrowRight className="h-4 w-4" />
+            <div className="mx-auto mt-11 grid max-w-5xl gap-4 md:grid-cols-3">
+              <Link href="/learn" className="group inline-flex min-h-20 items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 px-5 py-4 text-lg font-bold text-white shadow-[0_16px_44px_rgba(99,102,241,0.35)] hover:-translate-y-0.5">
+                <BookOpen className="h-5 w-5" />
+                New to RAG
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
               </Link>
-              <Link href="/implementation" className="inline-flex items-center gap-2 rounded-md border border-indigo-300/25 bg-blue-950/45 px-5 py-3 text-sm font-bold text-blue-50 backdrop-blur hover:-translate-y-0.5 hover:bg-blue-900/60">
+              <Link href="/architectures" className="group inline-flex min-h-20 items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white/75 px-5 py-4 text-lg font-bold text-slate-700 shadow-sm backdrop-blur hover:-translate-y-0.5 hover:border-indigo-300 dark:border-indigo-400/18 dark:bg-blue-950/45 dark:text-blue-100/72 dark:hover:bg-blue-900/50 dark:hover:text-white">
+                <Network className="h-5 w-5" />
+                Go deep
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+              </Link>
+              <Link href="/implementation" className="group inline-flex min-h-20 items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white/75 px-5 py-4 text-lg font-bold text-slate-700 shadow-sm backdrop-blur hover:-translate-y-0.5 hover:border-indigo-300 dark:border-indigo-400/18 dark:bg-blue-950/45 dark:text-blue-100/72 dark:hover:bg-blue-900/50 dark:hover:text-white">
+                <Workflow className="h-5 w-5" />
                 Build efficiently
-              </Link>
-              <Link href="/tools" className="inline-flex items-center gap-2 rounded-md border border-indigo-300/25 bg-blue-950/45 px-5 py-3 text-sm font-bold text-blue-50 backdrop-blur hover:-translate-y-0.5 hover:bg-blue-900/60">
-                Compare tools
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
               </Link>
             </div>
             <div className="mx-auto mt-14 max-w-5xl">
