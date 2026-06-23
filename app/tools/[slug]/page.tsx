@@ -6,6 +6,20 @@ import { LastVerified } from "@/components/LastVerified";
 import { RelatedContent } from "@/components/RelatedContent";
 import { tools } from "@/data/tools";
 
+const statusLabels = {
+  yes: "Yes",
+  partial: "Partial / depends on edition",
+  no: "No",
+  verify: "Check official source",
+} as const;
+
+const openSourceLabels = {
+  yes: "Open source",
+  partial: "Partly open source",
+  no: "Proprietary",
+  verify: "Check official source",
+} as const;
+
 export function generateStaticParams() {
   return tools.map((tool) => ({ slug: tool.slug }));
 }
@@ -33,9 +47,9 @@ export default async function ToolDetailPage({ params }: { params: Promise<{ slu
             <dl className="mt-8 grid gap-4 md:grid-cols-2">
               {[
                 ["Main use case", tool.mainUseCase],
-                ["Open source", tool.openSource],
-                ["Self-hosting", tool.selfHosting],
-                ["Cloud", tool.cloud],
+                ["Open source", openSourceLabels[tool.openSource]],
+                ["Self-hosting", statusLabels[tool.selfHosting]],
+                ["Cloud", statusLabels[tool.cloud]],
                 ["Pricing note", tool.pricingNote],
                 ["Target users", tool.targetUsers.join(", ")],
               ].map(([label, value]) => (

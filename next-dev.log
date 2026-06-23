@@ -119,3 +119,4 @@
  ○ Compiling /_error ...
  ✓ Compiled /_error in 2.5s (1016 modules)
  GET / 500 in 7244ms
+ GET / 200 in 657ms

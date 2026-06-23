@@ -26,6 +26,9 @@ export default function ToolsPage() {
           <p className="mt-3 max-w-3xl leading-8 text-slate-700 dark:text-slate-300">
             Treat tools as parts of a stack, not as interchangeable products. A RAG platform, orchestration framework, vector database, parser, reranker, and evaluation tool solve different problems.
           </p>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-400">
+            “Check official source” means the public information may change or depends on the product edition, deployment model, or license. Confirm the current status in the official documentation before choosing a tool.
+          </p>
           <ul className="mt-5 grid gap-3 md:grid-cols-2">
             {toolDecisionQuestions.map((question) => <li className="rounded-md border border-line bg-paper p-4 text-sm dark:border-slate-800 dark:bg-slate-900" key={question}>{question}</li>)}
           </ul>

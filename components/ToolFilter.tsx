@@ -10,6 +10,21 @@ const openSourceOptions = ["all", "yes", "partial", "no", "verify"] as const;
 const hostingOptions = ["all", "self-hosted", "cloud"] as const;
 const audienceOptions = ["all", "education", "enterprise", "research", "prototyping", "production"] as const;
 
+const optionLabels: Record<string, string> = {
+  all: "All",
+  yes: "Open source",
+  partial: "Partly open source",
+  no: "Proprietary",
+  verify: "Check official source",
+  "self-hosted": "Self-hosted",
+  cloud: "Cloud",
+  education: "Education",
+  enterprise: "Enterprise",
+  research: "Research",
+  prototyping: "Prototyping",
+  production: "Production",
+};
+
 export function ToolFilter({ tools }: { tools: Tool[] }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
@@ -53,8 +68,8 @@ function Select({ label, value, onChange, options }: { label: string; value: str
   return (
     <label className="block">
       <span className="sr-only">{label}</span>
-      <select value={value} onChange={(event) => onChange(event.target.value)} className="h-11 w-full rounded-md border border-line bg-white px-3 text-sm capitalize outline-none focus:border-spruce focus:ring-2 focus:ring-emerald-100 dark:border-slate-700 dark:bg-slate-950 dark:focus:ring-emerald-900">
-        {options.map((option) => <option key={option} value={option}>{option}</option>)}
+      <select value={value} onChange={(event) => onChange(event.target.value)} className="h-11 w-full rounded-md border border-line bg-white px-3 text-sm outline-none focus:border-spruce focus:ring-2 focus:ring-emerald-100 dark:border-slate-700 dark:bg-slate-950 dark:focus:ring-emerald-900">
+        {options.map((option) => <option key={option} value={option}>{optionLabels[option] ?? option}</option>)}
       </select>
     </label>
   );
