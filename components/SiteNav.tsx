@@ -8,18 +8,18 @@ import { useState } from "react";
 const primaryNav = [
   ["Learn", "/learn"],
   ["Tools", "/tools"],
-  ["Dify", "/dify"],
+  ["Architectures", "/architectures"],
+  ["Resources", "/resources"],
 ];
 
 const secondaryNav = [
-  ["Architectures", "/architectures"],
+  ["Dify", "/dify"],
   ["Tutorials", "/tutorials"],
   ["Use Cases", "/use-cases"],
   ["Comparisons", "/comparisons"],
   ["Implementation", "/implementation"],
   ["Evaluation", "/evaluation"],
   ["Glossary", "/glossary"],
-  ["Resources", "/resources"],
 ];
 
 const mobileNav = [["Home", "/"], ...primaryNav, ...secondaryNav];
