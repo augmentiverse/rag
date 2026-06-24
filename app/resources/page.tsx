@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { GuideGrid } from "@/components/GuideGrid";
+import { ReferenceLibrary } from "@/components/ReferenceLibrary";
 import { ResourceCard } from "@/components/ResourceCard";
 import { SectionHeader } from "@/components/SectionHeader";
 import { sectionGuides } from "@/data/deepReference";
 import { officialSourceLinks } from "@/data/reference";
+import { researchReferences } from "@/data/researchReferences";
 import { resources } from "@/data/resources";
 
 export const metadata: Metadata = {
@@ -31,6 +33,23 @@ export default function ResourcesPage() {
               </a>
             ))}
           </div>
+        </div>
+        <div className="mt-12">
+          <SectionHeader
+            eyebrow="Research library"
+            title="Papers, books, technical articles, and practitioner discussions"
+            description="Search by title, author, publisher, or topic. Primary sources and publisher records are distinguished from reader-supplied references that still require canonical-link or bibliographic verification."
+          />
+          <div className="mt-6">
+            <ReferenceLibrary references={researchReferences} />
+          </div>
+        </div>
+        <div className="mt-12">
+          <SectionHeader
+            eyebrow="Working resources"
+            title="Documentation, datasets, benchmarks, repositories, and communities"
+            description="Use these sources while implementing and evaluating systems. Product features and APIs can change, so check current official documentation."
+          />
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {resources.map((resource) => <ResourceCard resource={resource} key={resource.title} />)}

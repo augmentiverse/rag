@@ -46,6 +46,19 @@ export type Resource = {
   url: string;
 };
 
+export type ResearchReference = {
+  title: string;
+  authors: string;
+  published: string;
+  publisher: string;
+  kind: "research paper" | "official documentation" | "book" | "technical article" | "community discussion" | "report";
+  topics: string[];
+  url?: string;
+  versionNote?: string;
+  verification: "verified primary" | "verified publisher" | "reader supplied";
+  note: string;
+};
+
 export type Architecture = {
   slug: string;
   title: string;
