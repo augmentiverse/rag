@@ -14,7 +14,7 @@ export function Footer() {
           <div><h2>Reference</h2><Link href="/resources">Resources</Link><Link href="/comparisons">Comparisons</Link><Link href="/editorial-principles">Editorial principles</Link></div>
         </div>
       </div>
-      <div className="rag-footer-bottom"><span>© {new Date().getFullYear()} AI·RAG · Reference Hub</span><span>Grounded knowledge · Verifiable sources</span><span className="font-serif text-base italic tracking-[0.12em] text-[#D8C497]">N. ELM.</span></div>
+      <div className="rag-footer-bottom"><span>© {new Date().getFullYear()} AI·RAG · Reference Hub</span><span>Grounded knowledge · Verifiable sources</span><div className="rag-editorial-credit" aria-label="Editorial credit"><span className="rag-editorial-label">AI·RAG · Knowledge &amp; Verified Sources</span><span className="rag-editorial-signature">N. Elmqaddem</span></div></div>
     </div>
   </footer>;
 }
