@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import "./redesign.css";
 import { Footer } from "@/components/Footer";
 import { SiteNav } from "@/components/SiteNav";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rag-reference-hub.local"),
+  metadataBase: new URL("https://ai-rag.space"),
   title: {
     default: "RAG Reference Hub",
     template: "%s | RAG Reference Hub",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-paper font-sans text-ink antialiased dark:text-slate-100">
         <Link
           href="#main"

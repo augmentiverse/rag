@@ -6,17 +6,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#111827",
-        muted: "#64748b",
-        paper: "#f8fafc",
-        line: "#d8e1ee",
-        spruce: "#1d4ed8",
-        moss: "#2563eb",
-        clay: "#b45309",
-        sky: "#2563eb"
+        ink: "#193B55",
+        muted: "#60798A",
+        paper: "#f5f8fa",
+        line: "#d8e3eb",
+        spruce: "#2D5876",
+        moss: "#3D7497",
+        clay: "#977847",
+        sky: "#3D7497"
       },
       boxShadow: {
-        soft: "0 18px 48px rgba(15, 23, 42, 0.10)"
+        soft: "0 18px 48px rgba(25, 59, 85, 0.10)"
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "Segoe UI", "sans-serif"],

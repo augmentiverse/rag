@@ -44,52 +44,37 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-line bg-slate-50 dark:border-indigo-400/15 dark:bg-[#070c1b]">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(37,99,235,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.055)_1px,transparent_1px)] bg-[size:44px_44px] dark:bg-[linear-gradient(rgba(96,165,250,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(96,165,250,0.06)_1px,transparent_1px)]" />
-        <div className="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-indigo-100/65 to-transparent dark:from-indigo-500/8" />
-        <div className="relative mx-auto max-w-[1440px] px-4 py-20 text-center sm:px-6 lg:px-8 lg:py-28">
-          <div className="mx-auto max-w-6xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-300/70 bg-white/80 px-5 py-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-indigo-700 shadow-sm dark:border-indigo-400/25 dark:bg-indigo-500/10 dark:text-indigo-300">
-              <span aria-hidden="true" className="text-indigo-500">&gt;</span>
-              Educational Reference Hub
+      <section className="rag-hero" aria-labelledby="rag-hero-title">
+        <div className="rag-hero-inner">
+          <div>
+            <p className="rag-hero-kicker">The reference portal for intelligent retrieval</p>
+            <h1 id="rag-hero-title" className="rag-hero-title">Make knowledge <em>more intelligent.</em></h1>
+            <p className="rag-hero-lead">A clear, practical guide to Retrieval-Augmented Generation: understand the foundations, explore tools, and build AI systems grounded in evidence.</p>
+            <p className="rag-hero-sub">From document ingestion and vector search to evaluation and traceable answers — explore the RAG ecosystem at your own pace.</p>
+            <div className="rag-hero-buttons">
+              <Link href="/learn" className="rag-hero-button primary"><BookOpen className="h-4 w-4" aria-hidden="true" /> Learn RAG <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+              <Link href="/architectures" className="rag-hero-button secondary"><Network className="h-4 w-4" aria-hidden="true" /> Explore architectures</Link>
             </div>
-            <h1 className="mx-auto mt-10 max-w-7xl overflow-visible font-display text-[clamp(3rem,7vw,6.6rem)] font-black leading-[1.03] tracking-normal">
-              <span className="block text-slate-950 dark:text-white">The practical portal for</span>
-              <span className="block bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-400 bg-clip-text pb-3 text-transparent">
-                Retrieval-Augmented Generation
-              </span>
-            </h1>
-            <p className="mx-auto mt-7 max-w-3xl text-xl leading-9 text-slate-600 dark:text-blue-100/78">
-              Learn what RAG is, compare tools, design architectures, evaluate quality, and build grounded AI systems that users can trust.
-            </p>
-            <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-600 dark:text-blue-100/64">
-              RAG connects language models with external knowledge sources to improve grounding, accuracy, traceability, and domain relevance.
-            </p>
-            <div className="mx-auto mt-11 grid max-w-5xl gap-4 md:grid-cols-3">
-              <Link href="/learn" className="group inline-flex min-h-20 items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 px-5 py-4 text-lg font-bold text-white shadow-[0_16px_44px_rgba(99,102,241,0.35)] hover:-translate-y-0.5">
-                <BookOpen className="h-5 w-5" />
-                New to RAG
-                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-              </Link>
-              <Link href="/architectures" className="group inline-flex min-h-20 items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white/75 px-5 py-4 text-lg font-bold text-slate-700 shadow-sm backdrop-blur hover:-translate-y-0.5 hover:border-indigo-300 dark:border-indigo-400/18 dark:bg-blue-950/45 dark:text-blue-100/72 dark:hover:bg-blue-900/50 dark:hover:text-white">
-                <Network className="h-5 w-5" />
-                Go deep
-                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-              </Link>
-              <Link href="/implementation" className="group inline-flex min-h-20 items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white/75 px-5 py-4 text-lg font-bold text-slate-700 shadow-sm backdrop-blur hover:-translate-y-0.5 hover:border-indigo-300 dark:border-indigo-400/18 dark:bg-blue-950/45 dark:text-blue-100/72 dark:hover:bg-blue-900/50 dark:hover:text-white">
-                <Workflow className="h-5 w-5" />
-                Build efficiently
-                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-              </Link>
+            <p className="rag-hero-proof"><ShieldCheck className="h-4 w-4" aria-hidden="true" /> Independent reference · Practical learning · Verifiable sources</p>
+          </div>
+          <div className="rag-visual" role="img" aria-label="Four stages of RAG: knowledge sources, information retrieval, AI generation, and a cited answer">
+            <div className="rag-visual-top"><span>THE RAG WORKFLOW</span><span>KNOWLEDGE / INTELLIGENCE</span></div>
+            <div className="rag-visual-grid">
+              <div className="rag-visual-node"><span className="rag-visual-icon"><BookOpen className="h-5 w-5" aria-hidden="true" /></span><small>01 / SOURCE</small><strong>Knowledge sources</strong><span>Documents & data</span></div>
+              <div className="rag-visual-node"><span className="rag-visual-icon"><Network className="h-5 w-5" aria-hidden="true" /></span><small>02 / SEARCH</small><strong>Relevant context</strong><span>Retrieve & rerank</span></div>
+              <div className="rag-visual-node"><span className="rag-visual-icon"><Sparkles className="h-5 w-5" aria-hidden="true" /></span><small>03 / GENERATE</small><strong>AI response</strong><span>Context + language model</span></div>
+              <div className="rag-visual-node"><span className="rag-visual-icon"><ShieldCheck className="h-5 w-5" aria-hidden="true" /></span><small>04 / VERIFY</small><strong>Grounded answer</strong><span>Evidence & citations</span></div>
+              <div className="rag-visual-core" aria-hidden="true">RAG</div>
             </div>
-            <div className="mx-auto mt-14 max-w-5xl">
-              <PortalStats stats={stats} />
-            </div>
+            <div className="rag-visual-bottom"><span>FROM SOURCES TO SUPPORTED ANSWERS</span><span>EVIDENCE FIRST</span></div>
           </div>
         </div>
       </section>
+      <section className="rag-stats" aria-label="Portal statistics">
+        <PortalStats stats={stats} />
+      </section>
 
-      <section className="border-y border-indigo-400/15 bg-blue-950/95 py-16">
+      <section className="rag-pipeline-section py-14">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="// pipeline overview" title="Ten stages, one grounded answer" description="Every verifiable answer travels through these stages, from raw knowledge to cited, evaluatable output." />
           <div className="mt-8">
@@ -122,7 +107,7 @@ export default function HomePage() {
           <SectionHeader title="Explore the portal" description="Use the hub as a map: learn the concepts, choose a stack, build a pipeline, evaluate quality, and keep knowledge current." />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {navCards.map(([label, href, Icon]) => (
-              <Link key={href as string} href={href as string} className="group rounded-xl border border-line bg-paper p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:bg-white hover:shadow-soft dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-950">
+              <Link key={href as string} href={href as string} className="rag-portal-card group rounded-xl border border-line bg-paper p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:bg-white hover:shadow-soft dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-950">
                 <Icon className="h-5 w-5 text-moss dark:text-emerald-300" />
                 <h2 className="mt-4 text-lg font-bold">{label as string}</h2>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Open the {String(label).toLowerCase()} section.</p>
