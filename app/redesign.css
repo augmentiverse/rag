@@ -104,3 +104,16 @@ body::before{background-image:linear-gradient(#3d74970a 1px,transparent 1px),lin
 @media(max-width:930px){.rag-hero-inner{grid-template-columns:1fr;padding:56px 26px 70px}.rag-hero-copy{max-width:780px}.rag-visual{max-width:650px;width:100%;margin:auto}.rag-pipeline-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.rag-footer-top{grid-template-columns:1fr}.rag-footer-links{max-width:690px}}
 @media(max-width:640px){.rag-header-inner{padding:9px 16px;min-height:62px}.rag-brand-icon{width:33px;height:33px}.rag-brand-type{font-size:19px}.rag-brand-type small{font-size:8px}.rag-header-cta{display:none}.rag-hero-inner{padding:49px 19px 60px;gap:33px}.rag-hero-title{font-size:clamp(2.5rem,10vw,3.55rem)}.rag-hero-buttons>a{flex:1}.rag-visual{padding:14px}.rag-visual-node{padding:11px;min-height:128px}.rag-visual-node strong{font-size:12px}.rag-visual-node span:last-child{font-size:10px}.rag-visual-core{width:48px;height:48px;font-size:12px}.rag-visual-bottom{font-size:9px}.rag-stats{padding:0 16px}.rag-pipeline-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rag-mobile-nav{grid-template-columns:repeat(2,minmax(0,1fr));padding:12px 15px}.rag-footer-inner{padding:36px 20px 20px}.rag-footer-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){.rag-portal-card,.rag-hero-button{transition:none}}
+
+
+/* Align legacy dark-mode utility backgrounds with the approved palette. */
+.dark .dark\\:bg-slate-950,.dark .dark\\:bg-blue-950{background-color:#193B55!important}
+.dark .dark\\:bg-slate-900{background-color:#244761!important}
+.dark .dark\\:border-slate-800,.dark .dark\\:border-slate-700{border-color:#d8c49733!important}
+.dark .dark\\:bg-emerald-950,.dark .dark\\:bg-sky-950{background-color:#2D5876!important}
+.dark .dark\\:text-emerald-100,.dark .dark\\:text-emerald-200,.dark .dark\\:text-emerald-300{color:#D8C497!important}
+.dark .dark\\:text-sky-100,.dark .dark\\:text-slate-300{color:#dbe8ef!important}
+.dark .dark\\:text-slate-400{color:#bfd2df!important}
+.dark .dark\\:border-emerald-800,.dark .dark\\:border-sky-800{border-color:#d8c49755!important}
+.dark input,.dark select,.dark textarea{background:#193B55;color:#f3f7fa;border-color:#d8c49755}
+.dark input::placeholder{color:#b6cbd8}
